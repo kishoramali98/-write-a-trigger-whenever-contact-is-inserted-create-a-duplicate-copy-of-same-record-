@@ -1,0 +1,45 @@
+Write A trigger Whenver Contact Is inserted Create Duplicate Record
+
+trigger InsertContact On ContacT(Before  Insert, After Insert )
+{
+  MyHandlerClass.MyINsert(Trigger.New)
+
+}
+
+
+//MYHandlerCLass
+
+Public Static Void MyInsert(List<Contact> MyConLIst)
+{
+
+
+   if(RecursionAvoid.Recursion=True)
+{
+     RecursionAvoid.Recursion= False;
+
+  list<Contact>Con211=New List<Contact>()
+   for(Contact Con:MyConLIst)
+    {
+     contact con1=New Contact();
+      Con1.FristNAme=Con.FristName;
+      Con1.LastName= Con.LastName;  
+       Con211.Add(Con1);
+
+
+
+    if(!con211.isEmpty())
+       {
+         insert.Con211;
+       }
+
+    }
+//RecursionAvoid//
+
+
+Public Class RecursionAvoid
+  {
+      Public static void Recursion = True;
+  }
+ 
+    
+}
